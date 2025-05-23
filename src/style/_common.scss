@@ -1,0 +1,45 @@
+    html, body {
+    margin: 0 auto;
+    max-width: 480px;
+  }
+  
+  h1, h2, h3, h4, h5, h6, p, figure {
+    margin: 0;
+  }
+  
+  ul, li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+    .search-wrapper {
+      width: 90%;
+      margin: 0 auto 20px;
+    }
+  
+    .category-menu {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .sale-item, .best-item, .pop-item {
+      width: 100%;
+    }
+
+  

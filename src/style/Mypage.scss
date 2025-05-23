@@ -1,0 +1,115 @@
+.mypage-container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    min-height: calc(100vh - 160px);
+  }
+  
+  .profile-section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .profile-section .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #9b43ee 0%, #667eea 100%);
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(155, 67, 238, 0.3);
+  }
+  
+  .profile-section .user-name {
+    margin: 0 0 5px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  .profile-section .user-email {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .menu-section {
+    background: white;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .menu-section .menu-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    font-size: 16px;
+  }
+  
+  .menu-section .menu-item:last-child {
+    border-bottom: none;
+  }
+  
+  .menu-section .menu-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+  }
+  
+  .menu-section .menu-item .menu-icon {
+    margin-right: 10px;
+  }
+  
+  .menu-section .menu-item .menu-text {
+    flex: 1;
+    text-align: left;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .menu-section .menu-item .menu-arrow {
+    color: #9b43ee;
+    font-weight: bold;
+  }
+  
+  .logout-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #ff4757 0%, #ff3838 100%);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
+  }
+  
+  .logout-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 71, 87, 0.4);
+    background: linear-gradient(135deg, #ff3838 0%, #ff2f2f 100%);
+  }
+  
+  .logout-btn:active {
+    transform: translateY(0);
+  }
+  
+  /* 반응형 디자인 */

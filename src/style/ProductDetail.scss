@@ -1,0 +1,116 @@
+.product-detail {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px;
+
+  .main-image-section {
+    margin-bottom: 20px;
+    text-align: center;
+
+    .main-product-image {
+      width: 60%;
+      max-width: 280px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid #eee;
+    }
+  }
+
+  .product-info-section {
+    padding: 0 10px 20px 10px;
+
+    .product-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #333;
+      text-align: center;
+    }
+
+    .product-price {
+      font-size: 18px;
+      font-weight: 700;
+      color: #eb3e3e;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .product-description,
+    .product-details,
+    .product-review {
+      margin-bottom: 30px;
+
+      h3 {
+        font-size: 16px;
+        margin-bottom: 15px;
+        color: #333;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          font-size: 14px;
+          color: #666;
+          margin-bottom: 8px;
+          padding-left: 10px;
+          position: relative;
+        }
+      }
+
+      .review-item {
+        background-color: #f9f9f9;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+
+        p {
+          margin-bottom: 5px;
+          color: #333;
+        }
+
+        span {
+          font-size: 12px;
+          color: #999;
+        }
+      }
+    }
+  }
+
+  .product-actions {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    .btn {
+      flex: 1;
+      padding: 12px 0;
+      font-size: 14px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .cart-btn {
+      background-color: #fff;
+      color: #333;
+      border: 1px solid #9b43ee;
+    }
+
+    .buy-btn {
+      background-color: #eb3e3e;
+      color: #fff;
+      border: none;
+    }
+  }
+}

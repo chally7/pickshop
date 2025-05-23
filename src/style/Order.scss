@@ -1,0 +1,129 @@
+.order {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px;
+
+  .order-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .product-image {
+      width: 60%;
+      border-radius: 10px;
+      margin-bottom: 50px;
+    }
+
+    .product-info {
+      width: 100%;
+
+      h2 {
+        font-size: 18px;
+        margin-bottom: 32px;
+      }
+
+      .price-row {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 10px;
+
+        .price {
+          font-size: 14px;
+          font-weight: bold;
+          margin-bottom: 32px;
+          color: #333;
+        }
+
+        .delivery {
+          font-size: 14px;
+          margin-bottom: 32px;
+          color: #eb3e3e;
+        }
+      }
+
+      .quantity-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 10px;
+
+        label {
+          font-size: 14px;
+          margin-bottom: 5px;
+        }
+
+        .quantity-box {
+          display: flex;
+          align-items: center;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          height: 42px;
+          overflow: hidden;
+          width: fit-content;
+
+          button {
+            width: 40px;
+            height: 100%;
+            border: none;
+            background-color: #f0f0f0;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #ddd;
+            }
+          }
+
+          span {
+            width: 50px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 42px;
+            background-color: #fff;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+          }
+        }
+      }
+
+      .btn-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 24px;
+
+        button {
+          flex: 1;
+          height: 45px;
+          font-size: 15px;
+          font-weight: bold;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+        }
+
+        .btn-cart {
+          background-color: #fff;
+          color: #333;
+          border: 1px solid #9b43ee;
+
+          &:hover {
+            background-color: #f8f8f8;
+          }
+        }
+
+        .btn-buy {
+          background-color: #eb3e3e;
+          color: #fff;
+
+          &:hover {
+            background-color: #d93232;
+          }
+        }
+      }
+    }
+  }
+}

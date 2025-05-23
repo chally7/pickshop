@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-bottom: 1px solid #1F1F1F;
+
+  .header-top {
+    width: 100%;
+    display: flex;
+    justify-content: center;   // ← 가로 가운데 정렬
+    align-items: center;       // ← 세로 가운데 정렬
+    margin-bottom: 10px;
+
+    .home-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center; // ← 버튼 내부 가로 중앙
+      align-items: center;     // ← 버튼 내부 세로 중앙
+
+      img {
+        width: 60px;
+        height: auto;
+      }
+    }
+  }
+
+  .header-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 10px;
+
+    .back-btn {
+      background-color: #eee;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  }
+}
