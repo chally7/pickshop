@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+      {
+        "source": "/admin/api/:match*",
+        "destination": "http://chally.dothome.co.kr/admin/api/:match*"
+      },
+      {
+        "source": "/upload/:match*",
+        "destination": "http://chally.dothome.co.kr/admin/product/upload/:match*"
+      }
+    ]
+}

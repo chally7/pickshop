@@ -6,8 +6,8 @@ function MyContext({children}) {
     let [product,setProduct] = useState([]);
     let [chargerProducts, setChargerProducts] = useState([]);
     let [cart, setCart] = useState([]);
-    const imgPath = 'http://chally.dothome.co.kr/admin/product/upload/';
-    const bannerPath = 'http://chally.dothome.co.kr/admin/banner/';
+    const imgPath = '/upload/';
+    const bannerPath = '/admin/banner/';
 
     // 장바구니에 상품 추가
     const addToCart = (product) => {
@@ -108,7 +108,7 @@ function MyContext({children}) {
     };
 
     useEffect(()=>{
-        axios.get('http://chally.dothome.co.kr/admin/api/p_list.php')
+        axios.get('/admin/api/p_list.php')
         .then(res=>{
             console.log(res.data);
             setProduct(res.data);
