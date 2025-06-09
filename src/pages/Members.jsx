@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../style/Members.scss';
+import axios from 'axios';
 
 function Members() {
   const navigate = useNavigate();
@@ -104,15 +105,23 @@ function Members() {
     }
 
     // 회원가입 정보 저장 (로컬 스토리지)
-    const newUser = {
+    /* const newUser = {
       name: formData.name,
       email: formData.email,
       password: formData.password,
       phone: formData.phone,
       marketingAgreed: agreements.marketingOptional
-    };
+    }; */
+    const formdata = new FormData();
+    formdata.append('name',formData.name)
+    formdata.append('email',formData.email)
+    formdata.append('password',formData.password)
+    formdata.append('tel',formData.phone)
+    formdata.append('market',agreements.marketingOptional)
+
+    //axios.post('/member.php',formdata);
     
-    localStorage.setItem('registeredUser', JSON.stringify(newUser));
+    //localStorage.setItem('registeredUser', JSON.stringify(newUser));  삭제
 
     setSuccess('회원가입이 완료되었습니다!');
     setError('');
