@@ -50,10 +50,8 @@ function ProductDetail() {
           {currentProduct.p_price ? parseInt(currentProduct.p_price).toLocaleString() + '원' : '가격 문의'}
         </p>
         
-        <div className="product-description">
-          <h3>상품 설명</h3>
-          <p>고품질 소재로 제작된 프리미엄 상품입니다.</p>
-          <p>내구성이 뛰어나며 실용적인 디자인을 자랑합니다.</p>
+        <div className="product-description" dangerouslySetInnerHTML={{__html:currentProduct.p_content}}>
+         
         </div>
 
         <div className="product-details">

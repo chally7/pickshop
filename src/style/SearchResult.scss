@@ -8,42 +8,55 @@
 
   .search-wrapper {
     display: flex;
+    justify-content: center;
     align-items: center;
     width: 100%;
     margin-bottom: 20px;
 
-    .search-input {
-      flex: 1;
-      height: 35px;
-      padding: 10px 15px;
-      border: 1px solid #9b43ee;
-      border-right: none;
-      border-radius: 10px 0 0 10px;
-      font-size: 12px;
-      outline: none;
-    }
+    .search-input-container {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
 
-    .search-btn {
-      height: 35px;
-      width: 40px;
-      background-color: white; /* 흰색 배경으로 변경 */
-      border: 1px solid #9b43ee;
-      border-left: none;
-      border-radius: 0 10px 10px 0;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0;
-      transition: background-color 0.3s ease; /* 부드러운 효과 추가 */
+      .search-input {
+        width: 100%;
+        padding: 10px 50px 10px 15px; // 우측에 버튼 공간 확보
+        font-size: 12px;
+        border: 1px solid #e156f6; // 새로운 색상
+        border-radius: 10px;
+        outline: none;
+        height: 35px;
 
-      &:hover {
-        background-color: #f8f9fa; /* 호버시 살짝 회색 */
+        &:focus {
+          border-color: #e156f6;
+        }
       }
 
-      img {
-        width: 20px;
-        height: 20px;
+      .search-btn {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 25px;
+        background: none; // 배경 제거
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+
+        img {
+          width: 22px; // 크기 증가
+          height: 22px; // 크기 증가
+          filter: brightness(0) saturate(100%) invert(11%) sepia(78%) saturate(6207%) hue-rotate(284deg) brightness(96%) contrast(93%); // #e156f6 색상
+          opacity: 1;
+        }
+
+        &:hover {
+          opacity: 0.7;
+        }
       }
     }
   }
@@ -54,7 +67,7 @@
     padding: 15px;
     background: #f8f9fa;
     border-radius: 10px;
-    border-left: 4px solid #9b43ee;
+    border-left: 4px solid #e156f6; // 새로운 색상
     width: 100%;
     box-sizing: border-box;
 
@@ -93,6 +106,55 @@
   .search-list {
     width: 100%;
 
+    .search-results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); // Search.scss와 동일
+      gap: 20px;
+
+      .search-result-item {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        cursor: pointer;
+        background-color: #fff;
+        transition: box-shadow 0.2s ease;
+
+        &:hover {
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-result-image {
+          width: 100%;
+          height: 180px; // Search.scss와 동일한 크기
+          object-fit: contain;
+          border-radius: 4px;
+          margin-bottom: 10px;
+          background-color: #f8f9fa;
+        }
+
+        .search-result-info {
+          .search-result-name {
+            font-size: 15px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 6px;
+            word-break: break-word;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.4;
+          }
+
+          .search-result-price {
+            font-size: 14px;
+            color: #555;
+            margin: 0;
+          }
+        }
+      }
+    }
+
     .search-phoneholder1 {
       list-style: none;
       padding: 0;
@@ -106,7 +168,7 @@
       .item {
         display: flex;
         align-items: center;
-        margin-bottom: 20px; /* 간격 줄임 */
+        margin-bottom: 20px;
         width: 100%;
         padding: 15px;
         background: white;
@@ -126,7 +188,7 @@
           height: 79px;
           border-radius: 10px;
           overflow: hidden;
-          margin-right: 15px; /* 간격 조정 */
+          margin-right: 15px;
           text-decoration: none;
           color: inherit;
           transition: transform 0.2s;
@@ -162,8 +224,8 @@
           }
 
           span {
-            font-size: 13px; /* 폰트 크기 약간 증가 */
-            color: #9b43ee; /* 브랜드 색상으로 변경 */
+            font-size: 13px;
+            color: #e156f6;
             font-weight: 700;
           }
         }

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import searchIcon from '../img/search.png';
 import { GlobelState } from '../MyContext';
 import '../style/SearchResult.scss';
@@ -9,6 +9,7 @@ function SearchResult() {
   const [searchTerm, setSearchTerm] = useState('휴대폰 거치대');
   const [searchResults, setSearchResults] = useState([]);
   const [hasSearched, setHasSearched] = useState(false);
+  const navigate = useNavigate();
 
   // 고급 검색 함수 - 띄어쓰기, 특수문자 무시하고 세밀한 검색
   const advancedSearch = (searchText, productName) => {
@@ -72,17 +73,19 @@ function SearchResult() {
   return (
     <div className="searchresult">
       <div className="search-wrapper">
-        <input
-          type="search"
-          className="search-input"
-          placeholder="상품 검색"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          onKeyPress={handleKeyPress}
-        />
-        <button className="search-btn" onClick={handleSearch}>
-          <img src={searchIcon} alt="검색" />
-        </button>
+        <div className="search-input-container">
+          <input
+            type="search"
+            className="search-input"
+            placeholder="상품 검색"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onKeyPress={handleKeyPress}
+          />
+          <button className="search-btn" onClick={handleSearch}>
+            <img src={searchIcon} alt="검색" />
+          </button>
+        </div>
       </div>
 
       <div className="search-list">
@@ -99,21 +102,27 @@ function SearchResult() {
         )}
 
         {displayProducts.length > 0 ? (
-          <ul className="search-phoneholder1">
-            <li className="holder-list">
-              {displayProducts.map((item, idx) => (
-                <div key={item.id} className="item">
-                  <NavLink to={`/productdetail/${item.id}`} className="holder-item">
-                    <img src={imgPath + item.p_thumb} alt={item.p_name} className="holder-img" />
-                  </NavLink>
-                  <div className="info">
-                    <h2>{item.p_name}</h2>
-                    <span>{item.p_price ? `${parseInt(item.p_price).toLocaleString()}원` : '가격 문의'}</span>
-                  </div>
+          <div className="search-results-grid">
+            {displayProducts.map((item, idx) => (
+              <div 
+                key={item.id} 
+                className="search-result-item"
+                onClick={() => navigate(`/productdetail/${item.id}`)}
+              >
+                <img 
+                  src={imgPath + item.p_thumb} 
+                  alt={item.p_name}
+                  className="search-result-image"
+                />
+                <div className="search-result-info">
+                  <h4 className="search-result-name">{item.p_name}</h4>
+                  <p className="search-result-price">
+                    {item.p_price ? `${parseInt(item.p_price).toLocaleString()}원` : '가격 문의'}
+                  </p>
                 </div>
-              ))}
-            </li>
-          </ul>
+              </div>
+            ))}
+          </div>
         ) : hasSearched ? (
           <div className="no-results">
             <p>검색된 상품이 없습니다.</p>

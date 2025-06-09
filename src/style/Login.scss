@@ -25,14 +25,20 @@
   input {
     padding: 10px;
     margin-bottom: 32px;
-    border: 1px solid #ccc;
+    border: 1px solid #e156f6; // 새로운 색상으로 변경
     font-size: 12px;
     border-radius: 6px;
+
+    &:focus {
+      outline: none;
+      border-color: #e156f6;
+      box-shadow: 0 0 0 3px rgba(225, 86, 246, 0.1);
+    }
   }
 
   button {
     padding: 10px;
-    background-color: #3352eb;
+    background-color: #e156f6; // 새로운 색상으로 변경
     color: #fff;
     border: none;
     cursor: pointer;
@@ -42,8 +48,91 @@
     margin-bottom: 32px;
 
     &:hover {
-      background-color: #005fa3;
+      background-color: #d146e8; // 호버 색상도 맞춤
     }
+  }
+}
+
+/* 아이디 찾기/비밀번호 재설정 링크 */
+.find-links {
+  text-align: center;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  .find-link {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 0;
+
+    &:hover {
+      color: #666;
+    }
+  }
+
+  .separator {
+    color: #333;
+    font-size: 14px;
+  }
+}
+
+/* 준비중 팝업 스타일 */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease-out;
+
+  .popup-content {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    max-width: 200px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: translateY(0);
+    animation: popupSlideIn 0.4s ease-out;
+
+    h3 {
+      margin: 0;
+      color: #333;
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popupSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -55,11 +144,11 @@
   .join-link {
     display: inline-block;
     margin-top: 10px;
-    color: #3352eb;
+    color: #e156f6; // 새로운 색상으로 변경
     text-decoration: underline;
 
     &:hover {
-      color: #003fa3;
+      color: #d146e8; // 호버 색상도 맞춤
     }
   }
 }
