@@ -5,7 +5,7 @@
         "destination": "http://chally.dothome.co.kr/admin/api/:match*"
       },
       {
-        "source": "/upload/:match*",
+        "source": "/:match*",
         "destination": "http://chally.dothome.co.kr/admin/product/upload/:match*"
       }
     ]
