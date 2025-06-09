@@ -102,7 +102,7 @@ function MyContext({ children }) {
   };
 
   useEffect(() => {
-    axios.get(process.env.REACT_APP_URL + '/admin/api/p_list.php')
+    axios.get(process.env.REACT_APP_URL + '/p_list.php')
       .then(res => {
         if (Array.isArray(res.data)) {
           setProduct(res.data);

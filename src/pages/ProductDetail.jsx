@@ -27,9 +27,9 @@ function ProductDetail() {
 
   const handleBuyNow = () => {
     navigate('/order', { 
-      state: { 
+      state: {
         product: currentProduct,
-        imgPath: imgPath 
+        imgPath: imgPath
       }
     });
   };
@@ -38,9 +38,9 @@ function ProductDetail() {
     <div className="product-detail">
       <div className="main-image-section">
         <img 
-          src={imgPath + currentProduct.p_thumb} 
-          alt={currentProduct.p_name} 
-          className="main-product-image" 
+          src={imgPath + currentProduct.p_thumb}
+          alt={currentProduct.p_name}
+          className="main-product-image"
         />
       </div>
 
@@ -51,29 +51,6 @@ function ProductDetail() {
         </p>
         
         <div className="product-description" dangerouslySetInnerHTML={{__html:currentProduct.p_content}}>
-         
-        </div>
-
-        <div className="product-details">
-          <h3>상품 상세 정보</h3>
-          <ul>
-            <li>제조사: 프리미엄 브랜드</li>
-            <li>원산지: 한국</li>
-            <li>배송: 무료배송</li>
-            <li>AS: 1년 무상 A/S</li>
-          </ul>
-        </div>
-
-        <div className="product-review">
-          <h3>고객 후기</h3>
-          <div className="review-item">
-            <p>★★★★★ 정말 좋은 상품이에요!</p>
-            <span>구매자: 김**</span>
-          </div>
-          <div className="review-item">
-            <p>★★★★☆ 가격 대비 만족합니다.</p>
-            <span>구매자: 이**</span>
-          </div>
         </div>
       </div>
 
